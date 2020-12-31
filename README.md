@@ -18,7 +18,7 @@ import { map, mapReverse } from "guinho-automapper-js/dist/index";
 ### Example
 
 ```js
-import { map } from "guinho-automapper-js/dist/index";
+import { map } from "guinho-automapper-js";
 
 const mapping = [
   {
