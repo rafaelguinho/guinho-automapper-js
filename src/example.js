@@ -1,4 +1,4 @@
-import { map } from "./guinho-automapper-js.js";
+import { map } from "./index.js";
 
 const mapping = [
   {

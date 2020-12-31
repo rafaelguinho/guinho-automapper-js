@@ -1,0 +1,25 @@
+{
+  "name": "guinho-automapper-js",
+  "version": "1.0.0",
+  "description": "Guinho-Automapper-js makes easier working with object mapping.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelguinho/guinho-automapper-js.git"
+  },
+  "author": "Rafael Guinho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelguinho/guinho-automapper-js/issues"
+  },
+  "homepage": "https://github.com/rafaelguinho/guinho-automapper-js#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.0"
+  }
+}
