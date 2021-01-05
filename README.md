@@ -12,13 +12,13 @@ $ npm i guinho-automapper-js
 ### Usage
 
 ```js
-import { map, mapReverse } from "guinho-automapper-js/dist";
+import { map, mapReverse } from "guinho-automapper-js/index";
 ```
 
 ### Example
 
 ```js
-import { map } from "guinho-automapper-js/dist";
+import { map } from "guinho-automapper-js/index";
 
 const mapping = [
   {
