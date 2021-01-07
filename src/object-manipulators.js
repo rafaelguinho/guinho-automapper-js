@@ -6,7 +6,9 @@
  * @param  {*}            val  The value to assign
  */
 
-const putInObj = function (obj, path, val) {
+const putInObj = function (obj, path, val, strictMode) {
+
+	if(strictMode && !val) return;
 
 	var stringToPath = function (path) {
 
@@ -98,7 +100,7 @@ const getInObj = function(obj, path, patternReplace) {
         }
 	}
 	
-	if(patternReplace){
+	if(patternReplace && typeof obj === 'string'){
 		obj = obj.replace(patternReplace, '');   
 	}
     

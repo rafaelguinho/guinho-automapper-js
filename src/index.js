@@ -1,16 +1,16 @@
 import { putInObj, getInObj } from "./object-manipulators.js";
 
-function map(objOrigin, objDest, mapping) {
-  convert(objOrigin, objDest, mapping);
+function map(objOrigin, objDest, mapping, strictMode) {
+  convert(objOrigin, objDest, mapping, strictMode);
 
   return objDest;
 }
 
-function convert(obj1, obj2, mapping) {
+function convert(obj1, obj2, mapping, strictMode) {
   mapping.forEach((map) => {
     const value = getValue(obj1, map);
 
-    putInObj(obj2, map.to, value);
+    putInObj(obj2, map.to, value, strictMode);
   });
 }
 
@@ -32,16 +32,16 @@ function getProcessing(obj1, map) {
   return getInObj(item, map.process_from.field_find);
 }
 
-function mapReverse(objOrigin, objDest, mapping) {
-  convertReverse(objOrigin, objDest, mapping);
+function mapReverse(objOrigin, objDest, mapping, strictMode) {
+  convertReverse(objOrigin, objDest, mapping, strictMode);
 
   return objDest;
 }
 
-function convertReverse(obj1, obj2, mapping) {
+function convertReverse(obj1, obj2, mapping, strictMode) {
   mapping.forEach((map) => {
     const value = getInObj(obj2, map.to);
-    putInObj(obj1, map.from, value);
+    putInObj(obj1, map.from, value, strictMode);
   });
 }
 

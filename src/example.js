@@ -45,7 +45,7 @@ const pokemonOrigin = {
 
 let pokemonDest = {};
 
-map(pokemonOrigin, pokemonDest, mapping);
+map(pokemonOrigin, pokemonDest, mapping, true);
 
 document.getElementById('pokemonOrigin').innerText = JSON.stringify(pokemonOrigin); 
 document.getElementById('pokemonDest').innerText = JSON.stringify(pokemonDest); 
