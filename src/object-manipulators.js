@@ -88,12 +88,15 @@ const putInObj = function (obj, path, val, strictMode) {
  */
 
 const getInObj = function(obj, path, patternReplace) {
+
+	console.log(path);
+
     path = path.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
     path = path.replace(/^\./, '');           // strip a leading dot
     var a = path.split('.');
     for (var i = 0, n = a.length; i < n; ++i) {
         var k = a[i];
-        if (k in obj) {
+        if (obj && k in obj) {
           obj = obj[k];
         } else {
             return;
