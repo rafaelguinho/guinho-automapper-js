@@ -8,7 +8,7 @@
 
 const putInObj = function (obj, path, val, strictMode) {
 
-	if(strictMode && !val) return;
+	if(strictMode && (val === 'undefined' || val === null)) return;
 
 	var stringToPath = function (path) {
 
@@ -60,8 +60,6 @@ const putInObj = function (obj, path, val, strictMode) {
 		// Otherwise, update the current place in the object
 		else {
 
-			console.log();
-
 			// If the key doesn't exist and the next item is not a number, create it
 			if (!current[key] && !/^\d+$/.test(path[index+1])) {
 				current[key] = {};
@@ -88,8 +86,6 @@ const putInObj = function (obj, path, val, strictMode) {
  */
 
 const getInObj = function(obj, path, patternReplace) {
-
-	console.log(path);
 
     path = path.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
     path = path.replace(/^\./, '');           // strip a leading dot
