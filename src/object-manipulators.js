@@ -8,7 +8,7 @@
 
 const putInObj = function (obj, path, val, strictMode) {
 
-	if(strictMode && (val === 'undefined' || val === null)) return;
+	if(strictMode && (val === undefined || val === null)) return;
 
 	var stringToPath = function (path) {
 
