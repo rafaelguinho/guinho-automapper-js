@@ -1,4 +1,4 @@
-import { putInObj, getInObj } from "./object-manipulators.js";
+import { putInObj, getInObj } from './object-manipulators.js';
 
 function map(objOrigin, objDest, mapping, strictMode) {
   convert(objOrigin, objDest, mapping, strictMode);
@@ -9,13 +9,16 @@ function map(objOrigin, objDest, mapping, strictMode) {
 function convert(obj1, obj2, mapping, strictMode) {
   mapping.forEach((map) => {
     const value = getValue(obj1, map);
+    if (!value && map.fallback_value) {
+      value = map.fallback_value;
+    }
 
     putInObj(obj2, map.to, value, strictMode);
   });
 }
 
 function getValue(obj1, map) {
-  if (map.type === "process-from") {
+  if (map.type === 'process-from') {
     return getProcessing(obj1, map);
   } else {
     return getInObj(obj1, map.from, map.fromPatternReplace);
