@@ -8,7 +8,7 @@ function map(objOrigin, objDest, mapping, strictMode) {
 
 function convert(obj1, obj2, mapping, strictMode) {
   mapping.forEach((map) => {
-    const value = getValue(obj1, map);
+    let value = getValue(obj1, map);
     if (!value && map.fallback_value) {
       value = map.fallback_value;
     }
