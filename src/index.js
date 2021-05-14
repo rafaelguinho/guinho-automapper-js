@@ -9,7 +9,8 @@ function map(objOrigin, objDest, mapping, strictMode) {
 function convert(obj1, obj2, mapping, strictMode) {
   mapping.forEach((map) => {
     let value = getValue(obj1, map);
-    if (!value && map.fallback_value) {
+    console.log(value);
+    if (typeof value === 'undefined' || value === null && map.fallback_value) {
       value = map.fallback_value;
     }
 

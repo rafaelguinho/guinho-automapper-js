@@ -1,7 +1,7 @@
 import { map } from "./index.js";
 
 const mapping = [
-  { from: "type", to: "data.type" },
+  { fallback_value: "natural", from: "none", to: "kind" },
   {
     from: "info.action",
     to: "data.relationships.related_person.data[0].action",
@@ -17,7 +17,7 @@ const mapping = [
     to: "data.relationships.related_person.data[0].attributes.name",
   },
   {
-    type: 'transform-from',
+    type: "transform-from",
     transform: (value) => `${value}ssss`,
     from: "info.notes",
     to: "data.relationships.related_person.data[0].attributes.notes",
@@ -33,14 +33,13 @@ const mapping = [
   { from: "principalInsured.id", to: "data.attributes.person_id" },
 ];
 
-const pokemonOrigin = {"info":{"notes":"NORMAL"}};
+const pokemonOrigin = { info: { notes: "NORMAL" } };
 
 let pokemonDest = {};
 
-map(pokemonOrigin, pokemonDest, mapping, true);
+map(pokemonOrigin, pokemonDest, mapping, false);
 
-document.getElementById("pokemonOrigin").innerText = JSON.stringify(
-  pokemonOrigin
-);
+document.getElementById("pokemonOrigin").innerText =
+  JSON.stringify(pokemonOrigin);
 console.log(pokemonDest);
 document.getElementById("pokemonDest").innerText = JSON.stringify(pokemonDest);

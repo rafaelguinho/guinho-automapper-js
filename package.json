@@ -1,6 +1,6 @@
 {
   "name": "guinho-automapper-js",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "description": "Guinho-Automapper-js makes easier working with object mapping.",
   "main": "webpack.config.js",
   "scripts": {
