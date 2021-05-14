@@ -20,9 +20,17 @@ function convert(obj1, obj2, mapping, strictMode) {
 function getValue(obj1, map) {
   if (map.type === 'process-from') {
     return getProcessing(obj1, map);
+  } else if (map.type === 'transform-from') {
+    return getTransform(obj1, map.from, map.transform);
   } else {
     return getInObj(obj1, map.from, map.fromPatternReplace);
   }
+}
+
+function getTransform(obj1, path, transform) {
+  const value = getInObj(obj1, path);
+
+  return transform(value);
 }
 
 function getProcessing(obj1, map) {
